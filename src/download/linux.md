@@ -10,8 +10,11 @@ eleventyNavigation:
     <div class="column">
       <div>
         <h1>Linux Download</h1>
+        <p>FlatHub supports both x86_64 and ARM64</p>
         <br>
         <a class="button size-large type-link" href="https://flathub.org/apps/details/org.prismlauncher.PrismLauncher" target="_blank">Install from FlatHub</a>
+        <p>x86_64 ONLY</p>
+        <br>
         <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Linux-{{version.current}}-x86_64.AppImage">Download (AppImage)</a>
         <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Linux-{{version.current}}.tar.gz">Download (tar.gz)</a>
         <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Linux-portable-{{version.current}}.tar.gz">Download Portable (tar.gz)</a>
@@ -29,7 +32,7 @@ eleventyNavigation:
 
 # <img src="https://www.vectorlogo.zone/logos/alpinelinux/alpinelinux-icon.svg" height="20"> Alpine Linux
 
-[APK Packages](https://pkgs.alpinelinux.org/packages?name=prismlauncher) are avalible on Alpine Linux Edge for multiple architectures
+[APK Packages](https://pkgs.alpinelinux.org/packages?name=prismlauncher) are available on Alpine Linux Edge for multiple architectures
 
 ```bash
 apk add prismlauncher
@@ -45,6 +48,8 @@ There are several AUR packages available:
 [![prismlauncher](https://img.shields.io/badge/aur-prismlauncher-blue)](https://aur.archlinux.org/packages/prismlauncher/)  
 [![prismlauncher-bin](https://img.shields.io/badge/aur-prismlauncher--bin-blue)](https://aur.archlinux.org/packages/prismlauncher-bin/)  
 [![prismlauncher-git](https://img.shields.io/badge/aur-prismlauncher--git-blue)](https://aur.archlinux.org/packages/prismlauncher-git/)
+  
+## Installing with an AUR helper
 
 ```bash
 # stable source package:
@@ -67,6 +72,27 @@ yay -S prismlauncher-qt5-git
 ```
 
 You can replace yay -S with your preferred [AUR helper's](https://wiki.archlinux.org/title/AUR_helpers) install command.
+  
+## Installation using Chaotic-AUR
+
+If you have not already enabled the Chaotic-AUR follow their instructions on <https://aur.chaotic.cx/> to enable it.
+  
+```bash
+# stable package:
+sudo pacman -S prismlauncher
+# latest git package:
+sudo pacman -S prismlauncher-git
+```
+
+If you want to use Qt 5 to build the packages instead:
+
+```bash
+# stable Qt 5 package:
+sudo pacman -S prismlauncher-qt5
+# latest Qt 5 git package:
+sudo pacman -S prismlauncher-qt5-git
+```
+
 </div>
 
 <div class="infobox top">
@@ -115,7 +141,7 @@ NOTE: Prebuilt MPR only officially supports Debian 11, Ubuntu 20.04 and Ubuntu 2
 
 ## Installing with an MPR helper
 
-Installing UNA
+Installing [UNA](https://github.com/AFK-OS/una)
 
 ```bash
 bash <(curl -fsL https://github.com/AFK-OS/una/raw/main/install.sh)
@@ -135,7 +161,24 @@ una install prismlauncher-git
 ```
 
 You can replace una install with your preferred [MPR helper's](https://docs.makedeb.org/using-the-mpr/list-of-mpr-helpers/) install command.
-  
+
+## Installing with Pacstall
+
+Installing [Pacstall](https://pacstall.dev/)
+
+```bash
+sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
+```
+
+NOTE: Pacstall is unstable on Debian, due to outdated dependencies.
+
+Installing Prism Launcher
+
+```bash
+# latest git package:
+pacstall -I prismlauncher-git
+```
+
 </div>
   
 <div class="infobox top">
@@ -144,7 +187,7 @@ You can replace una install with your preferred [MPR helper's](https://docs.make
 
 Prism Launcher is available in the [pi-apps](https://github.com/Botspot/pi-apps) store as a deb install:
 
-[![pi-apps-badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fprism-launcher-pi-apps-badge-j4vzf67fcok7.runkit.sh%2F)](https://github.com/Botspot/pi-apps)
+[![pi-apps-badge](https://img.shields.io/badge/dynamic/json?color=c51a4a&label=Pi-Apps&prefix=Prism%20Launcher%20&query=%24..%5B%3F%28%40.Name%3D%3D%22Minecraft%20Java%20Prism%20Launcher%22%29%5D.Version&url=https%3A%2F%2Fraw.githubusercontent.com%2FBotspot%2Fpi-apps-analytics%2Fmain%2Fpackage_data.json)](https://github.com/Botspot/pi-apps)
 
 NOTE: Only supports Debian/Raspbian/Pi OS Buster and newer and Ubuntu 18.04 and newer.
 *Debian-based ARM packages are community-maintained, Prism Launcher is not responsible for outdated versions.*
@@ -155,30 +198,13 @@ NOTE: Only supports Debian/Raspbian/Pi OS Buster and newer and Ubuntu 18.04 and 
 
 # <img src="https://www.vectorlogo.zone/logos/getfedora/getfedora-icon.svg" height="20"> Fedora
 
-## Copr
-  
-RPM packages are available on [Copr](https://copr.fedorainfracloud.org/coprs/g3tchoo/prismlauncher/).
+RPM packages for Fedora are available on [Copr](https://copr.fedorainfracloud.org/coprs/g3tchoo/prismlauncher/).
+
+Nightly builds are updated in the [Terra repository](https://terra.fyralabs.com/) and built on Copr every 24 hours.
 
 ```bash
 # enables the copr repo
 sudo dnf copr enable g3tchoo/prismlauncher
-# stable releases
-sudo dnf install prismlauncher
-# latest builds
-sudo dnf install prismlauncher-nightly
-# stable Qt 5 releases
-sudo dnf install prismlauncher-qt5
-# latest Qt 5 builds
-sudo dnf install prismlauncher-qt5-nightly
-```
-
-## Terra
-
-Only available for users running Fedora 37 and up.
-  
-```bash
-# enables the terra repository
-sudo dnf config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
 # stable releases
 sudo dnf install prismlauncher
 # latest builds
@@ -218,7 +244,7 @@ Have fun! :)
 
 A [Nix derivation](https://github.com/PrismLauncher/PrismLauncher/blob/develop/nix/NIX.md) is available.
 
-Packages are available on `nixos-small-unstable`, `nixos-unstable`, and on `nixpkgs-unstable`. Packages will be available soon on `nix-22.05`.
+Packages are available for all current Nix distributions.
 
 </div>
   
@@ -235,8 +261,12 @@ zypper addrepo https://download.opensuse.org/repositories/home:getchoo/openSUSE_
 zypper refresh
 # stable releases (Qt6 version, only for Tumbleweed)
 zypper install prismlauncher
+# latest builds (Qt6 version, only for Tumbleweed)
+zypper install prismlauncher-nightly
 # stable releases (Qt5 version, available for Leap and Tumbleweed)
 zypper install prismlauncher-qt5
+# latest builds (avalible for Leap and Tumbleweed)
+zypper install prismlauncher-qt5-nightly
 ```
   
 </div>

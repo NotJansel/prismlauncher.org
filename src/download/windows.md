@@ -11,9 +11,14 @@ eleventyNavigation:
     <div class="column">
       <div>
         <h1>Windows Download</h1>
+        <p>Windows 10/11 64bit ONLY</p>
         <br>
         <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Setup-{{version.current}}.exe">Installer (.exe)</a>
         <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Portable-{{version.current}}.zip">Portable (.zip)</a>
+        <p>Windows 7/8.1 32/64 bit and Windows 10 32 bit</p>
+        <br>
+        <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Legacy-Setup-{{version.current}}.exe">Legacy Installer (.exe)</a>
+        <a class="button size-large" href="https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Legacy-Portable-{{version.current}}.zip">Legacy Portable (.zip)</a>
       </div>
     </div>
     <div class="column">
@@ -23,14 +28,6 @@ eleventyNavigation:
 </div>
 
 <div class="infobox top">
-
-## Legacy version
-
-There is a legacy version of Prism Launcher, primarily for older versions of Windows like Windows 7 or Windows 8.1 and/or 32 bit Windows.
-You can download it here:
-
-- [Legacy installer (.exe)](https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Legacy-Setup-{{version.current}}.exe)
-- [Legacy portable (.zip)](https://github.com/PrismLauncher/PrismLauncher/releases/download/{{version.current}}/PrismLauncher-Windows-Legacy-Portable-{{version.current}}.zip)
 
 ## Advanced Windows install options
 
@@ -57,9 +54,9 @@ scoop install prismlauncher-qt5 #if you want Windows-Legacy instead
 
 ```powershell
 # Install standard version
-choco install prismlauncher --version 5.0
+choco install prismlauncher
 # Install legacy version
-choco install prismlauncher --version 5.0 --params='/legacy'
+choco install prismlauncher --package-parameters="'/legacy'"
 ```
 
 *Chocolatey and Scoop packages are community-maintained, Prism Launcher is not responsible for outdated versions.*
